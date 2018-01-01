@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -25,6 +26,23 @@ public class ContaMatriz implements Serializable{
     @Temporal(TemporalType.DATE)
     private Date dataCriacao;
     private Status status;
+    private BigDecimal saldo;
+
+    protected boolean contaNaoAtiva() {
+        if (this.getStatus().equals(Status.BLOQUEADA) ||
+        this.getStatus().equals(Status.CANCELADA)) {
+                return true;
+        }
+        return false;
+    }
+
+    public final void aporte(BigDecimal valor) {
+
+        if (!(this instanceof ContaMatriz)) {
+            throw new RuntimeException("Somente contas Matriz pode realizar aportes");
+        }
+        this.saldo.add(valor);
+    }
 
     public enum Status {
         BLOQUEADA,

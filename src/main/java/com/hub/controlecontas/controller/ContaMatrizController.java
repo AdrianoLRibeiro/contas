@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/conta-matriz")
+@RequestMapping(value="/parent-matriz")
 public class ContaMatrizController {
 
     @Autowired
@@ -18,13 +18,6 @@ public class ContaMatrizController {
 
     @RequestMapping(method= RequestMethod.GET)
     public List<ContaMatriz> getAll() {
-       /* System.out.println("getAll");
-        return asList(ContaMatriz.builder()
-            .id("00")
-            .nome("getAll")
-            .dataCriacao(new Date())
-            .status(ContaMatriz.Status.ATIVA)
-            .build());*/
         return service.getAll();
     }
 
