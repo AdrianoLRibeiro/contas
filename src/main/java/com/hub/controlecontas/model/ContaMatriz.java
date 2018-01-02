@@ -30,7 +30,7 @@ public class ContaMatriz implements Serializable{
 
     @OneToOne
     @JoinColumn(name = "pessoa", referencedColumnName = "id")
-    Pessoa pessoa;
+    private Pessoa pessoa;
 
     protected boolean contaNaoAtiva() {
         if (this.getStatus().equals(Status.BLOQUEADA) ||

@@ -17,8 +17,8 @@ import javax.persistence.OneToOne;
 @AllArgsConstructor
 public class PessoaJuridica extends Pessoa {
 
-    String razaoSocial;
-    String nomeFantasia;
+    private String razaoSocial;
+    private String nomeFantasia;
 
     public PessoaJuridica(String id, String razaoSocial, String nomeFantasia) {
         super(id);

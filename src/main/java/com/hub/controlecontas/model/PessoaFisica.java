@@ -16,11 +16,11 @@ import java.util.Date;
 @AllArgsConstructor
 public class PessoaFisica extends Pessoa {
 
-    String nome;
+    private String nome;
 
     @JsonFormat(pattern="dd-MM-yyyy" , locale = "pt-BR", timezone = "Brazil/East")
     @Temporal(TemporalType.DATE)
-    Date dataNascimento;
+    private Date dataNascimento;
 
     public PessoaFisica(String id, String nome, Date dataNascimento) {
         super(id);

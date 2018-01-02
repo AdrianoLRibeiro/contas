@@ -21,7 +21,7 @@ public class ContaFilial extends ContaMatriz {
     @JoinColumn(name = "parent", referencedColumnName = "id")
     @JsonBackReference
     @NonNull
-    ContaMatriz parent;
+    private ContaMatriz parent;
 
     public ContaFilial(String id, String nome, Date dataCriacao, Status status, BigDecimal saldo, ContaMatriz parent, Pessoa pessoa) {
         super(id, nome, dataCriacao, status, saldo, pessoa);

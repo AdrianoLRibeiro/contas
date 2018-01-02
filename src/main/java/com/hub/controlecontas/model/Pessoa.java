@@ -14,8 +14,8 @@ import javax.persistence.InheritanceType;
 @NoArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS )
-public abstract class Pessoa {
+public class Pessoa {
     @Id
-    String id;
+    private String id;
 
 }

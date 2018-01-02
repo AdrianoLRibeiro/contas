@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/parent-matriz")
+@RequestMapping(value="/conta-matriz")
 public class ContaMatrizController {
 
     @Autowired
