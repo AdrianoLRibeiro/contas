@@ -28,6 +28,10 @@ public class ContaMatriz implements Serializable{
     private Status status;
     private BigDecimal saldo;
 
+    @OneToOne
+    @JoinColumn(name = "pessoa", referencedColumnName = "id")
+    Pessoa pessoa;
+
     protected boolean contaNaoAtiva() {
         if (this.getStatus().equals(Status.BLOQUEADA) ||
         this.getStatus().equals(Status.CANCELADA)) {

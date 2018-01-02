@@ -19,6 +19,8 @@ public class ContaFilialTest {
     ContaFilial c2;
     ContaFilial c3;
 
+    Pessoa p1;
+
     @Before
     public void setUp() {
         matriz = ContaMatriz.builder()
@@ -37,9 +39,11 @@ public class ContaFilialTest {
             .saldo(new BigDecimal(100))
             .build();
 
-        c1 = new ContaFilial("11", "conta filial 1", new Date(), ATIVA, new BigDecimal(100), matriz);
-        c2 = new ContaFilial("22", "conta filial 2", new Date(), ATIVA, new BigDecimal(100), matriz);
-        c3 = new ContaFilial("33", "conta filial 3", new Date(), ATIVA, new BigDecimal(100), matriz2);
+         p1 = new PessoaFisica ( "11", "pessoa 1", new Date());
+
+        c1 = new ContaFilial("11", "conta filial 1", new Date(), ATIVA, new BigDecimal(100), matriz, p1);
+        c2 = new ContaFilial("22", "conta filial 2", new Date(), ATIVA, new BigDecimal(100), matriz, p1);
+        c3 = new ContaFilial("33", "conta filial 3", new Date(), ATIVA, new BigDecimal(100), matriz2, p1);
 
     }
 

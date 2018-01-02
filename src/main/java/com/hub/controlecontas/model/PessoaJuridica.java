@@ -15,13 +15,14 @@ import javax.persistence.OneToOne;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PessoaJuridica implements Pessoa {
+public class PessoaJuridica extends Pessoa {
 
-    @Id String cnpj;
     String razaoSocial;
     String nomeFantasia;
 
-    @OneToOne
-    @JoinColumn(name = "conta", referencedColumnName = "id")
-    ContaMatriz conta;
+    public PessoaJuridica(String id, String razaoSocial, String nomeFantasia) {
+        super(id);
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+    }
 }

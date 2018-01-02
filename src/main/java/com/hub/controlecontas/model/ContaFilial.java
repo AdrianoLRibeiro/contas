@@ -23,8 +23,8 @@ public class ContaFilial extends ContaMatriz {
     @NonNull
     ContaMatriz parent;
 
-    public ContaFilial(String id, String nome, Date dataCriacao, Status status, BigDecimal saldo, ContaMatriz parent) {
-        super(id, nome, dataCriacao, status, saldo);
+    public ContaFilial(String id, String nome, Date dataCriacao, Status status, BigDecimal saldo, ContaMatriz parent, Pessoa pessoa) {
+        super(id, nome, dataCriacao, status, saldo, pessoa);
         this.parent = parent;
     }
 

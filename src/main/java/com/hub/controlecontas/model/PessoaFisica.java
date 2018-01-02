@@ -14,16 +14,17 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PessoaFisica implements Pessoa {
+public class PessoaFisica extends Pessoa {
 
-    @Id String cpf;
     String nome;
 
     @JsonFormat(pattern="dd-MM-yyyy" , locale = "pt-BR", timezone = "Brazil/East")
     @Temporal(TemporalType.DATE)
     Date dataNascimento;
 
-    @OneToOne
-    @JoinColumn(name = "conta", referencedColumnName = "id")
-    ContaMatriz conta;
+    public PessoaFisica(String id, String nome, Date dataNascimento) {
+        super(id);
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+    }
 }
